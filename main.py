@@ -332,14 +332,28 @@ st.set_page_config(page_title="Python → C 변환기", layout="wide")
 
 st.title("Python → C 언어 변환기")
 
+default_code = '''print("시작")
+fin="끝"
+a=0
+b=5
+c=[1, 2, 3]
+a=a+5
+for i in range(2, 10, 2):
+    b=b+i
+for i in range(3):
+    print(c[i])
+print("a는", a, "b는", b)
+print(fin)'''
+
 pycode = st.text_area(
     "Python 코드 입력",
     height=400,
-    placeholder="여기에 Python 코드를 입력하세요"
+    value=default_code
 )
+
 convert = st.button("변환")
 
-prin=convert_py_to_c(pycode)
+
 if convert:
     result = "\n".join(convert_py_to_c(pycode))
     st.code(result, language="c")
