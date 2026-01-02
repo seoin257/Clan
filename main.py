@@ -337,11 +337,13 @@ fin="끝"
 a=0
 b=5
 c=[1, 2, 3]
-a=a+5
+a+=b
 for i in range(2, 10, 2):
-    b=b+i
+    b+=i
 for i in range(3):
     print(c[i])
+while a<=10:
+    a+=1
 print("a는", a, "b는", b)
 print(fin)'''
 
